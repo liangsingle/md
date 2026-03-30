@@ -34,6 +34,11 @@ jobs:
       - name: Build
         run: pnpm web build
 
+      - name: Generate CNAME
+        run: |
+          mkdir -p apps/web/dist
+          echo "md.ergua.site" > apps/web/dist/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
